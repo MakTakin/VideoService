@@ -6,19 +6,18 @@ import { LoginButton } from '../../ui/buttons';
 const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
 `
 
 const FormHeader = styled.div`
     font-size: 28px;
     font-weight: 500;
+    align-self: center;
     margin-bottom: 24px;
 `
 
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex: 1;
     > :last-child {
         margin-top: auto;
@@ -26,6 +25,7 @@ const Form = styled.form`
 `
 const Error = styled.div`
     color: red;
+    align-self: center;
     margin-bottom: 24px;
 `
 
@@ -48,6 +48,7 @@ const FormLogin = (props) => {
                     onChange={(e) => props.onLogin(e)}
                 />
                 <FormInput
+                    type="password"
                     value={props.user.password}
                     name='password'
                     placeholder='Пароль'

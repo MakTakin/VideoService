@@ -4,26 +4,40 @@ import Search from './search/search';
 import Login from './login/login';
 import Logo from './logo/logo';
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
     display: flex;
-    justify-content: space-between;
+    padding: 32px 130px 42px 130px;
     align-items: center;
-    padding: 32px 130px 48px 130px;
-    
-    @media (max-width: 991px) {
-        flex-wrap: wrap;
-        padding: 32px 30px 48px 30px;
+    >:first-child {
+        margin-right: 207px;
     }
-    @media (max-width: 720px) {
-        > :nth-child(2) { 
-            order: 1; 
-        }
+    >:nth-child(3) {
+        margin-left: auto;
+    }
+    
+    @media (max-width: 1200px) {
+        justify-content: space-between;
+        flex-wrap: wrap;
         > :nth-child(1) { 
             flex: 50%;
             margin-bottom: 20px;
+            margin-right: 10px;
+        }
+        > :nth-child(2) { 
+            order: 1; 
+            flex: 0 50%;
         }
         > :nth-child(3) {
             margin-bottom: 20px;
+        }
+        
+    }
+    @media (max-width: 991px) {
+        padding: 32px 30px 42px 30px;
+    }
+    @media (max-width: 720px) {
+        > :nth-child(3) { 
+            margin-left: 0;
         }
     }
     @media (max-width: 480px) {

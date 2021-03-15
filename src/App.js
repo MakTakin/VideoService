@@ -6,9 +6,19 @@ import Footer from './components/footer/footer';
 import { useEffect, useState } from 'react';
 import Modal from './components/modalLogin/modal';
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+`
 const Container = styled.div`
     margin: 0 auto;
-    max-width: 1440px;
+    width: 1440px;
+    
+    @media (max-width:1200px) {
+        width: auto;
+        max-width: 1200px;
+    }
 `
 
 function App() {
@@ -24,7 +34,7 @@ function App() {
 
     const onValidation = (user) => {
         let isValid = true
-        isValid = user.login.trim() !== '' && isValid
+        isValid = user.login.trim() !== '' && user.login.length < 20 && isValid
         isValid = user.password.length >= 4 && isValid
         return isValid
     }
@@ -48,7 +58,7 @@ function App() {
                 localStorage.setItem('authorized', JSON.stringify(true))
             }
         } else {
-            setError('Введите корректный логин или пароль')
+            setError('Ваш логин должен быть меньше 20 символов, а пароль больше 3 символов')
         }
     }
 
@@ -93,38 +103,41 @@ function App() {
     }, [])
 
    return (
-        <Container>
-            <Header
-                user={user}
-                error={error}
-                authorized={authorized}
-                setLogin={setLogin}
-                changeLogin={changeLogin}
-                setChangeLogin={setChangeLogin}
-                onExit={onExit}
-                onLogin={onLogin}
-                closeChangeLogin={closeChangeLogin}
-            />
-            <Switch>
-                <Route path='/'
-                     render={() => <Main/>
-                     }
-                />
-                <Redirect to='/'/>
-            </Switch>
-            <Footer/>
-            {login ?
-                <Modal
+       <Wrapper>
+            <Container>
+                <Header
                     user={user}
-                    setUser={setUser}
-                    setLogin={setLogin}
                     error={error}
+                    authorized={authorized}
+                    setLogin={setLogin}
+                    changeLogin={changeLogin}
+                    setChangeLogin={setChangeLogin}
+                    onExit={onExit}
                     onLogin={onLogin}
-                    onEnter={onEnter}
-                /> :
-                null
+                    closeChangeLogin={closeChangeLogin}
+                />
+                <Switch>
+                    <Route path='/'
+                         render={() => <Main/>
+                         }
+                    />
+                    <Redirect to='/'/>
+                </Switch>
+            </Container>
+            <Footer/>
+            {
+                login ?
+                    <Modal
+                        user={user}
+                        setUser={setUser}
+                        setLogin={setLogin}
+                        error={error}
+                        onLogin={onLogin}
+                        onEnter={onEnter}
+                    /> :
+                    null
             }
-        </Container>
+        </Wrapper>
   );
 }
 

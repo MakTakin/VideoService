@@ -10,12 +10,12 @@ const ModalWindow = styled.div`
     height: 100%;
     background: rgba(0,0,0,0.7);
     > div {
-        background:#fff;
-        margin: 20vh auto;
-        width: 304px;
-        height: 394px;
+        margin: 202px auto;
+        width: 235px;
+        height: 323px;
         border-radius: 8px;
         padding: 36px;
+        background:#fff;
         box-shadow: 3px 5px 7px rgba(0,0,0,0.6);
     }
     @media (max-width: 480px) {

@@ -6,7 +6,7 @@ import NavMenu from './navbar/navMenu';
 import Movies from './movies/movies';
 import Channels from './channels/channels';
 
-const MainContainer = styled.div`
+const MainContainer = styled.main`
     padding: 0 130px;
     
     @media (max-width: 991px) {

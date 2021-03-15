@@ -1,12 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Channel = styled.div`
+const Channel = styled.li`
     display: flex;
     background: #F2F2F2;
     border-radius: 8px;
     padding: 20px 0;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
     
     @media (max-width: 720px) {
         flex-wrap: wrap; 
@@ -17,7 +21,7 @@ const PictureChannel = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
+    width: 34.5%;
     
     @media (max-width: 991px) {
         width:25%;  
@@ -34,9 +38,8 @@ const Program = styled.div`
     
 `
 
-const ProgramHeader = styled.div`
+const ProgramHeader = styled.h2`
     font-size: 20px;
-    font-weight: bold;
     margin-bottom: 15px;
     
 `

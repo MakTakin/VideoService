@@ -6,7 +6,7 @@ import Genres from './genres/genres';
 const MoviesMain = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 32px 0 62px 0;
+    padding: 38px 0 62px 0;
 `
 const Movies = (props) => {
     return (

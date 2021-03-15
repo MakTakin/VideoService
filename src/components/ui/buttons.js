@@ -4,7 +4,7 @@ export const SearchButton = styled.button`
     color: #E5261E;
     cursor: pointer;
     background: #fff;
-    padding: 0;
+    padding: 0 0 6px 0;
     border: none;
     outline: none;
     font-size: 16px;
@@ -18,6 +18,7 @@ export const LoginButton = styled(SearchButton)`
     border-radius: 4px;
     background: #E5261E;
     color: #fff;
+    align-self: center;
 
     &:hover {
         background: #CC221B;

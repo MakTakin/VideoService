@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { MenuLink } from '../../ui/links';
 
-const Menu = styled.div`
+const Menu = styled.nav`
     text-align: center;
 `
 

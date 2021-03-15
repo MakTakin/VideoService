@@ -1,14 +1,17 @@
 import styled from 'styled-components'
+import checkbox from '../../assets/images/checkbox.png'
 
 export const SearchInput = styled.input`
     font-size: 16px;
+    font-family: 'Rubik';
     border: none;
     border-bottom: 1px solid #333333;
+    padding-bottom: 6px;
     outline: none;
 `
 
 export const FormInput = styled(SearchInput)`
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 `
 
 export const LoginInput = styled(SearchInput)`
@@ -41,7 +44,7 @@ export const CheckBox = styled.div`
             border-radius: 4px; 
         }
         &::after {
-            content: '✔';
+            content: url(${checkbox});
             position: absolute;
             top: -1px;
             left: 2px;

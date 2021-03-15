@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FilmLink } from '../../../../ui/links';
 
-const Movie = styled.div`
+const Movie = styled.li`
     width: 280px;
 `
 
@@ -9,8 +10,12 @@ const MovieDescription = styled.div`
     display: none;
     position: absolute;
     background: rgb(51 51 51 / 80%);
-    height: 91%;
-    width: 88%;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 145%;
     padding: 16px;
     color: #F2F2F2;
     border-radius: 8px;
@@ -35,12 +40,14 @@ const MoviePicture = styled.div`
 const LatestItem = (props) => {
     return (
         <Movie>
-            <MoviePicture picture={props.picture}>
-                <MovieDescription>
-                    {props.description}
-                </MovieDescription>
-            </MoviePicture>
-            {props.name}
+            <FilmLink to='#'>
+                <MoviePicture picture={props.picture}>
+                    <MovieDescription>
+                        {props.description}
+                    </MovieDescription>
+                </MoviePicture>
+                {props.name}
+            </FilmLink>
         </Movie>
     )
 }

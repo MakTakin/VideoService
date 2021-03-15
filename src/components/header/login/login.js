@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import ChangeLogin from './changeLogin/changeLogin';
 import { ExitButton, LoginButton, NameButton } from '../../ui/buttons';
 
+
 const Authorized = styled.div`
     display: flex;
+    align-items: center;
     > :last-child {
         margin-left: 16px;
     }

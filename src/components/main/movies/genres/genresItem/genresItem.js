@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FilmLink } from '../../../../ui/links';
 
-const Genre = styled.div`
+const Genre = styled.li`
     display: flex;
     flex-direction: column;
     width: 280px;
@@ -11,11 +12,9 @@ const Genre = styled.div`
     border-radius: 6px;
     box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
     background: ${props => props.color};
-    opacity: 0.8;
     cursor:pointer;
-    color: #fff;
     &:hover {
-        opacity: 1;
+        background: ${props => props.colorHover};
     }
 `
 
@@ -25,22 +24,27 @@ const GenrePicture = styled.div`
 `
 const GenreName = styled.div`
     font-size: 20px;
-    margin-bottom: 24px
+    margin-bottom: 24px;
+    color: #fff;
 `
 
 const GenresItem = (props) => {
     return (
-        <Genre
-            color={props.color}
-        >
-            <GenrePicture>
-                {props.picture}
-            </GenrePicture>
-            <GenreName>
-                {props.name}
-            </GenreName>
+        <FilmLink to='#'>
+            <Genre
+                color={props.color}
+                colorHover={props.colorHover}
+            >
 
-        </Genre>
+                <GenrePicture>
+                    {props.picture}
+                </GenrePicture>
+                <GenreName>
+                    {props.name}
+                </GenreName>
+
+            </Genre>
+        </FilmLink>
     )
 }
 export default GenresItem

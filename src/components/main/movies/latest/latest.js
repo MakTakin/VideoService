@@ -3,32 +3,34 @@ import styled from 'styled-components'
 import { HeaderMovies } from '../../../ui/headers';
 import LatestItem from './latestItem/latestItem';
 
-const Movies = styled.div`
+const Movies = styled.ul`
     display: flex;
     flex-wrap: wrap;
+    font-size: 20px;
     justify-content: space-between;
+    list-style: none;
     > :not(:last-child) {
         margin-right: 10px;
     }
-    div {
+    > li {
         margin-bottom: 10px;
     }
     
     @media (max-width: 1200px) {
         justify-content: center;
-        div {
+        li, :last-child {
             margin-bottom: 20px;
             margin-right: 10px;
         }
     }
     @media (max-width: 480px) {
-        > :not(:last-child), div {
+        > li {
             margin-right: 0;
         }
     }
 `
 
-const MoviesContainer = styled.div`
+const MoviesContainer = styled.section`
     margin-bottom: 22px;
 `
 
